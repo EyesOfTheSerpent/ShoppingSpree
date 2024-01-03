@@ -17,7 +17,7 @@
 
         private static void StyleConsole()
         {
-            Console.Title = "Eugene's Shoppinglist";
+            Console.Title = "Maxwell's Shoppinglist";
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.BackgroundColor = ConsoleColor.Black;
         }

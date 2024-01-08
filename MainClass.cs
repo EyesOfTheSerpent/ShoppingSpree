@@ -5,14 +5,10 @@ namespace ShoppingSpree
 {
     internal class MainClass
     {
-
-        List<ISellable>? SomeRandomList { get; set; }
+        List<InventoryItem> SomeRandomList = [];
         public void MainPanel()
         {
-            Console.Clear();
-            Console.WriteLine("Welcome to the Supreme shop in North Korea. The most supreme country");
-            Console.WriteLine("1. Buy a \"volunteer\".");
-            Console.WriteLine("2. Buy Something cheap, trust me.");
+            ConUI.MainGUI();
             string Input = Console.ReadLine() ?? String.Empty;
 
             switch(Input)
@@ -27,16 +23,13 @@ namespace ShoppingSpree
                 case "3":
                     Console.WriteLine("Generating items.");
                     GenerateExistingItems();
-                    Thread.Sleep(5000);
+                    Thread.Sleep(3000);
                     MainPanel();
                     break;
                 default:
+                    MainPanel();
                     break;
             }
-            
-            
-
-            
         }
 
         void ShowList()

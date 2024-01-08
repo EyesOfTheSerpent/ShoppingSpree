@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            ArgumentNullException.ThrowIfNull(args);
+            //ArgumentNullException.ThrowIfNull(args);
             RunCode();
         }
 
@@ -12,12 +12,13 @@
         {
             StyleConsole();
             MainClass MC = new();
+            //MC.GenerateExistingItems();
             MC.MainPanel();
         }
 
         private static void StyleConsole()
         {
-            Console.Title = "Eugene's Shoppinglist";
+            Console.Title = "Maxwell's Shoppinglist";
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.BackgroundColor = ConsoleColor.Black;
         }

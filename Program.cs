@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            //ArgumentNullException.ThrowIfNull(args);
+            ArgumentNullException.ThrowIfNull(args);
             RunCode();
         }
 

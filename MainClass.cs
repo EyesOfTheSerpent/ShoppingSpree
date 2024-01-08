@@ -5,7 +5,8 @@ namespace ShoppingSpree
 {
     internal class MainClass
     {
-        List<InventoryItem> SomeRandomList = [];
+        private readonly string NL = Environment.NewLine;
+        private readonly List<InventoryItem> SomeRandomList = [];
         public void MainPanel()
         {
             ConUI.MainGUI();
@@ -14,10 +15,10 @@ namespace ShoppingSpree
             switch(Input)
             {
                 case "1":
-                    Console.WriteLine("The Supreme Leader does not allow you to buy them");
+                    Console.WriteLine("The Supreme Leader does not allow you to buy them.");
                     break;
                 case "2":
-                    Console.WriteLine("These are the items you can buy");
+                    Console.WriteLine($"These are the items you can buy: {NL}");
                     ShowList();
                     break;
                 case "3":
@@ -26,13 +27,20 @@ namespace ShoppingSpree
                     Thread.Sleep(3000);
                     MainPanel();
                     break;
+                case "4":
+                    Console.WriteLine("Closing program...");
+                    Thread.Sleep(1500);
+                    Environment.Exit(0);
+                    break;
                 default:
+                    Console.WriteLine("Not a valid input. Your argument is invalid.");
+                    Thread.Sleep(1600);
                     MainPanel();
                     break;
             }
         }
 
-        void ShowList()
+        private void ShowList()
         {
             if (SomeRandomList != null)
             {
@@ -40,6 +48,9 @@ namespace ShoppingSpree
                 {
                     Console.WriteLine($"{item.Name}", $"{item.Price}");
                 }
+                Console.WriteLine("Press any key to return back to the menu.");
+                Console.ReadKey();
+                MainPanel();
             }
             else
             {

@@ -12,7 +12,7 @@
         {
             StyleConsole();
             MainClass MC = new();
-            //MC.GenerateExistingItems();
+            MC.GenerateExistingItems();
             MC.MainPanel();
         }
 
